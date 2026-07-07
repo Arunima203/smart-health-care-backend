@@ -1,6 +1,9 @@
 from google import genai
 
-client = genai.Client(api_key="AQ.Ab8RN6J6xceaVPhf_1i-OWrWufkRXMLrnXVkNwYuQgCoWSZbLQ")
+client = genai.GenerativeModel()
+
+genai.configure(api_key=os.getenv("AQ.Ab8RN6Ix8-udDdiNRo8WZ31mUDw9MfZniUyK7M04cy0UrP26Qg"))
+
 print("Gemini client created successfully")
 def get_health_advice(symptoms,language):
     response = client.models.generate_content(
@@ -21,5 +24,4 @@ Give:
 4. Emergency Level
 """
 )
-    
-    return response.text
+     return response.text
